@@ -1,42 +1,38 @@
 // Write your code here
 
-import './index.css'
 import {Component} from 'react'
 
+import './index.css'
+
 class Welcome extends Component {
-  state = {isSubscribe: 'Subscribe'}
+  state = {
+    isSubscribed: false,
+  }
 
   onSubscribe = () => {
-    this.setState(prevState => ({isSubscribe: 'Subscribed'}))
+    this.setState(prevState => ({isSubscribed: !prevState.isSubscribed}))
   }
 
-  onSubscribed = () => {
-    this.setState(prevState => ({isSubscribe: 'Subscribe'}))
-  }
+  getButtonText = () => {
+    const {isSubscribed} = this.state
 
-  renderAuthbutton = () => {
-    const {isSubscribe} = this.state
-    if (isSubscribe === 'Subscribe') {
-      return (
-        <button type="button" className="btn" onClick={this.onSubscribe}>
-          {isSubscribe}
-        </button>
-      )
-    }
-    return (
-      <button type="button" className="btn" onClick={this.onSubscribed}>
-        {isSubscribe}
-      </button>
-    )
+    return isSubscribed ? 'Subscribed' : 'Subscribe'
   }
 
   render() {
-    const {isSubscribe} = this.state
+    const buttonText = this.getButtonText()
+
     return (
-      <div className="bg-container">
+      <div className="app-container">
         <h1 className="heading">Welcome</h1>
         <p className="description">Thank you! Happy Learning</p>
-        {this.renderAuthbutton()}
+        <button
+          type="button"
+          className="subscribe-button"
+          onClick={this.onSubscribe}
+        >
+          {buttonText}
+        </button>
       </div>
     )
   }
