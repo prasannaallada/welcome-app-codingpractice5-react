@@ -1,0 +1,48 @@
+/* Write your CSS here */
+.bg-container {
+  background-color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-family: 'Bree Serif';
+  font-size: 32px;
+  font-weight: 600;
+  color: #f0bb03;
+}
+
+@media screen and (min-width: 768px) {
+  .heading {
+    font-size: 47px;
+    font-weight: 800;
+  }
+}
+
+.description {
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .description {
+    font-size: 28px;
+    font-weight: 600;
+  }
+}
+
+.btn {
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
