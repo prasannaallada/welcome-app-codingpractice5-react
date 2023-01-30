@@ -16,7 +16,7 @@ class Welcome extends Component {
   getButtonText = () => {
     const {isSubscribed} = this.state
 
-    return isSubscribed ? 'Subscribed' : 'Subscribe'
+    return isSubscribed ? "Subscribed" : "Subscribe"
   }
 
   render() {
